@@ -66,3 +66,6 @@ In lines 10,12 and 13 there were typos in the commands.
 
 ## Task 2
 Added a line to find the location of the service.conf. As it is in the same directory of the script, it gets the script directory and set the path to the service.conf. So it will load it eveytime is executed. Nonzero error validation kept as it was.
+
+## Task 3
+Changed service.conf file type from Windows to Linux to convert line endings and fix error
