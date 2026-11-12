@@ -58,3 +58,11 @@ and pull request triggers, and ensure a script failure fails the workflow.
 
 Stop after approximately one hour. If anything remains unresolved, submit
 your progress, what you tried, and what you would investigate next.
+
+# Findings
+## Task 1
+Line 8 needed the variables to be references properly using $ 
+In lines 10,12 and 13 there were typos in the commands.
+
+## Task 2
+Added a line to find the location of the service.conf. As it is in the same directory of the script, it gets the script directory and set the path to the service.conf. So it will load it eveytime is executed. Nonzero error validation kept as it was.
