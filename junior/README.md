@@ -72,4 +72,5 @@ ehho "Bytes base64 count: $bytes_base64_count"
 using this variable like this bytes-base64 read "$bytes" as the varioable and the rest as text
 ehho makes the script not recognize a valid command
 
+functionality: It generates 10 random bytes, base64-encodes them, counts both, and prints the counts, their sum, and the encoded string.
 
