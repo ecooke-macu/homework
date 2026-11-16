@@ -58,6 +58,7 @@ and pull request triggers, and ensure a script failure fails the workflow.
 
 Stop after approximately one hour. If anything remains unresolved, submit
 your progress, what you tried, and what you would investigate next.
+
 ## Findings
 
 ### Task 1
@@ -70,8 +71,8 @@ The configuration path depended on the current working directory. I changed it t
 
 ### Task 3
 
-The starter available in this repository did not include the referenced workflow or its logs. I added a workflow at the repository root that runs both scripts from `junior` on pushes and pull requests. A failing script fails its workflow step.
+The starter available in this repository did not include the referenced workflow or its logs. I added a workflow at the repository root that runs both scripts from `junior` on pushes and pull requests. A failing script fails its workflow step. The push workflow passed in GitHub Actions.
 
 ### AI assistance
 
-I used an AI assistant to help identify the script issues, suggest fixes, run local checks in Git Bash, and prepare the workflow and this findings section. I reviewed the changes and their output as we worked through the tasks.
+I used an AI assistant to work through the tasks step by step, continuously reviewing the changes and results and deciding what to do next.
