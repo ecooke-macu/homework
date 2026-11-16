@@ -75,4 +75,4 @@ The starter available in this repository did not include the referenced workflow
 
 ### AI assistance
 
-I used an AI assistant to work through the tasks step by step, continuously reviewing the changes and results and deciding what to do next.
+I used an AI assistant to help identify issues, update the scripts, README, and workflow, and run tests. I guided the work step by step and asked for explanations and verification along the way.
