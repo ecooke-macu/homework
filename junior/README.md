@@ -58,3 +58,20 @@ and pull request triggers, and ensure a script failure fails the workflow.
 
 Stop after approximately one hour. If anything remains unresolved, submit
 your progress, what you tried, and what you would investigate next.
+## Findings
+
+### Task 1
+
+The script failed because the first `echo` used an unusual whitespace character. The output also referenced the wrong variable and misspelled `echo`. I noticed that storing binary data in a Bash variable can lose null bytes and that here-strings add a newline. I used a temporary file for the random bytes, fixed the output, and checked the result with `bash task-1-script/random-data.sh` in Git Bash. The script generates 10 random bytes, encodes them as Base64, and prints the counts and their sum.
+
+### Task 2
+
+The configuration path depended on the current working directory. I changed it to resolve `service.conf` relative to the script. I ran the script from the homework directory and its parent, and checked that a missing configuration reports an error and exits with a nonzero status. I restored the configuration afterward.
+
+### Task 3
+
+The starter available in this repository did not include the referenced workflow or its logs. I added a workflow at the repository root that runs both scripts from `junior` on pushes and pull requests. A failing script fails its workflow step.
+
+### AI assistance
+
+I used an AI assistant to help identify the script issues, suggest fixes, run local checks in Git Bash, and prepare the workflow and this findings section. I reviewed the changes and their output as we worked through the tasks.

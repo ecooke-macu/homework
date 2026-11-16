@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-bytes=$(openssl rand 10)
-bytes_base64=$(base64 <<<"$bytes")
-bytes_count=$(wc -c <<<"$bytes")
-bytes_base64_count=$(wc -c <<<"$bytes_base64")
-combined_count=$((bytes_count + bytes_base64_count)) 
+# Keep binary data in a file so null bytes are preserved.
+bytes_file=$(mktemp)
+trap 'rm -f "$bytes_file"' EXIT
+openssl rand 10 > "$bytes_file"
 
-echo⠀"Combined count: $combined_count"
+bytes_base64=$(base64 < "$bytes_file")
+bytes_count=$(wc -c < "$bytes_file")
+bytes_base64_count=${#bytes_base64}
+combined_count=$((bytes_count + bytes_base64_count))
+
+echo "Combined count: $combined_count"
 echo "Bytes count: $bytes_count"
-echo "Bytes base64: $bytes-base64"
-ehho "Bytes base64 count: $bytes_base64_count"
+echo "Bytes base64: $bytes_base64"
+echo "Bytes base64 count: $bytes_base64_count"
